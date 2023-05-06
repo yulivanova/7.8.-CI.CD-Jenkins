@@ -1,0 +1,28 @@
+{
+  "name": "cypress-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:movieBooking": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group movieBooking --ci-build-id 5 --spec 'cypress/e2e/movieBooking.cy.js'",
+    "test:login": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group login --ci-build-id 5 --spec 'cypress/e2e/login.js'",
+    "test:mainPage": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group mainPage --ci-build-id 5 --spec 'cypress/e2e/mainPage.cy.js'",
+    "test:parallel": "run-p -c test:movieBooking test:login test:mainPage",
+    "test:movieBooking:electron": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group movieBooking --browser electron --spec 'cypress/e2e/movieBooking.cy.js'",
+    "test:login:chrome": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group login --browser chrome --spec 'cypress/e2e/login.cy.js'",
+    "test:mainPage:edge": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group mainPage --browser edge --spec 'cypress/e2e/mainPage.cy.js'",
+    "test:parallel:browser": "run-p -c test:login:chrome test:mainPage:edge",
+    "test:folder1": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group folder1 --spec 'cypress/e2e/folder1/*'",
+    "test:folder2": "cypress run --record --key c5aeb998-eb10-47eb-8f03-7369e70689c3 --group folder2 --spec 'cypress/e2e/folder2/*'",
+    "test:parallel:folder": "run-p -c test:folder1 test:folder2"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "dependencies": {
+    "cypress": "^12.11.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
